@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        Variables de tipo compuesto o complejo
+        */
+
+        /*Función: bloque codigo aucontenido independiente al scope o ambito global. Es reutilizable.
+        Las funciones son un objeto en js. 
+        */
+
+        //Función declarada
+
+        function suma( x,y,z) {
+            console.log(x+y);
+            return x+y+z
+        }
+
+        // Invocación de la función
+        suma(1,2,3)
+
+        // una función que es asignada a una variable guarda solo el valor que es retornado (return)
+        resultado = suma(1,2,3)
+        console.log(resultado)
+
+        //Función anonima: Función que no tiene nombre
+        const funcionExpresada = function(){
+            console.log('Esto es una función expresada, es decir, que se le ha asignado a una variable. Si se invoca antes de su definición, js nos dirá que no podemos acceder pues no ha sido creada.')
+        }
+
+        // Arrays
+        const a = [1,2,3,4];
+        console.log(a.length); // Longitud del array
+
+        const b = Array.of('x','y',1,2,3); //Otra manera de llenar elementos con método of
+        const c = Array(100).fill(false); //arreglo de 100 posiciones inicializado en false
+
+        // NO se usa ya este constructor para los arreglos
+        const d = new Array();
+        const e = new Array(0,9,8);
+
+        // Métodos para los arreglos
+        const colores = ['amarillo','azul','gris']
+        console.log(colores);
+        colores.push('rojo'); // agrega
+        console.log(colores);
+        colores.pop(); // borra último elemento
+        console.log(colores);
+
+        colores.forEach( function (x,index) { // x es el iterador de la lista
+            console.log(`${index+1}. Color ${x}`) 
+        });
+
+        // Objetos: Dentro de los objetos a las variables se les llama atributos y a las funciones se les llama métodos
+
+        const daniel = {
+            nombre: `Daniel`,
+            apellido: `Tejada`,
+            edad: 26,
+            pasatiempos: [`nadar`,`leer`,`correr`],
+            soltero: true,
+            contactto:{
+                email: `dtejadah@unal.edu.co`,
+                movil: `573167729592`
+            },
+            saludar: function() {
+                console.log(`Hola`)
+            },
+            miPresentacion: function () {
+                console.log(`Mi nombre es ${this.nombre} ${this.apellido} y tengo ${this.edad} años.`);
+            }
+        };
+    
+
+    </script>
+    
+</body>
+</html>

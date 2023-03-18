@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Arrow Functions: Funciones flecha, son nueva forma de expresiones anonimas expresadas, es decir cuando a una variable asigno una función
+
+        const saludar = function() {
+            console.log(`Hola`);
+        }
+
+        // la arrow sería
+        const saludar2 = () => console.log(`Hola`); // () son obligatorios cuando no hay parametros. 
+        const saludar3 = nombre => console.log(`Hola ${nombre}`);
+
+        const sumar = (a,b) => console.log(a+b);
+;
+
+        saludar();
+        saludar2();
+        saludar3('Daniel 1');
+        sumar(1,2);
+
+        const numeros = [5,4,3,2,1];
+        numeros.forEach(
+            (number,index) =>{console.log(`El elemento ${number} está en la posición ${index}.`);}
+        );
+
+    </script>
+</body>
+</html>

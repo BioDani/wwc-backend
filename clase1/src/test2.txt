@@ -1,0 +1,1 @@
+Nuevo archivo a través de un string versión 2.

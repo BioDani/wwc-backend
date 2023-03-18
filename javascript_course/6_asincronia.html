@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Javascript es un lenguaje de un solo subproceso o hilo: Single thread; es decir, solo puede ejecutar una cosa a la vez.
+
+        Asincronia: Permite realizar largas solicitudes de red, sin bloquear el hilo principal. 
+
+        Javascript trabaja bajo un modelo asincrono y no bloqueante
+
+
+        Procesamiento sigle thread y Multi thread
+        Operaciones de CPU y Operación I/O(entrada y salida)
+        Operaciones concurrentes y paralelas
+        Operaciones bloqueanes y no bloqueantes
+        Operaciones Síncronas y Asíncronas.
+
+        Event loop en javascript: 
+
+        Callback: es una función que se va a ejecutar despues de que otra lo haga. Mecanismo para invocar muchas funciones en javascript. 
+        */
+
+        function cuadradoCallback(value,callback){
+            setTimeout(() => {
+                callback(value,value*value);
+            }, 0|Math.random()*100);
+        }
+
+        cuadradoCallback(0,(value,result)=>{
+            console.log("Inicia Callback");
+        }); 
+    </script>
+</body>
+</html>

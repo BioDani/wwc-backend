@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Existen objetos literales, cuyo prototipo es object. Estos son diferentes a los objetos creados bajo una clase particular. 
+
+
+        /*
+        POO
+        
+        Clases: Es un modelo a seguir para generar instancias. 
+        Objetos: Es una instancia de una clase. Los objetos tienen:
+        -atributos: Es una característica o propiedad del objeto (son variables dentro de un objeto)
+        -métodos: Son las acciones que un objeto puede realizar  
+        */
+
+        // Las clases las escribimos en UpperCamelCase 
+        // objetos siempre en lowerCamelCase
+
+        //función constructora
+        function Animal(nombre,genero){
+            //atributos
+            this.nombre = nombre;
+            this.genero = genero;
+
+            //método
+            this.sonar = function() {
+                console.log('Hago sonidos porque estoy vivo.');
+            }
+        };
+
+        const animalValentin = new Animal("Valentin","macho"); //prototipo Animal
+        console.log(animalValentin); 
+
+         
+
+        const animal2 = { // Objeto normal: Tiene por prototipo a object.
+            nombre: 'Valentin',
+            genero: 'macho'
+        };
+        console.log(animal2);
+
+        // ************************Herencia Prototípica******************************
+        // Perro hereda de Animal nombre y genero. Perro además tiene un nuevo atributo: tamanio.
+        function Perro(nombre,genero,tamanio){
+        this.super = Animal;
+        this.super(nombre,genero)
+        this.tamanio = tamanio;
+        }
+        // Finalmente hay que decir que perro sea una instancia de Animal. 
+        Perro.prototype = new Animal;
+        Perro.prototype.constructor = Perro; // Creo constructor
+
+        //sobreescritura de métodos del Prototipo padre en el hijo()
+        Perro.prototype.sonar = function() {
+            console.log('Ladra')
+        };
+
+        Perro.pr
+    </script>
+</body>
+</html>

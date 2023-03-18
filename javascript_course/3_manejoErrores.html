@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try {
+            noExiste; 
+            console.log(`No entra en este console.log()`)
+        } catch (error) {
+            console.log(error);
+        } finally { // Este bloque siempre se ejecuta
+            console.log(`Hubo un error.`);
+        }
+
+        console.log(`////////Ejemplo 2///////`);
+
+        try {
+            let numero = 'abc';
+            if (isNaN(numero)) {
+                throw new Error(`El valor no es un número.`)
+            } else{
+                console.log(`El número es ${numero}`)
+            }
+        } catch (error) {
+            console.log(`Se produjo el siguiente error: ${error}`)
+        }
+    </script>
+</body>
+</html>

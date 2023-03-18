@@ -1,0 +1,108 @@
+/*
+CURSO de de YOUTUBE de Jonmircha
+ECMASCRIPT 6:  Estándar para para javascript
+mozilla developer network
+
+Javascript es el unico en que puedes hacer isomorfismo(todo con la misma tecnología): 
+1. Frontend(javascript)
+2. Backend (Node.js): Programar en el lado del servidor.
+3. Perssistencia de datos [MongoDB (noSQL), Couch DB, Firebase, etc]
+
+
+Javascript nace en los navegadores, y es la unica usada. Cualquier tipo de otro lenguaje se debe compilar codigo a  js, para 
+que los navegadores lo interpreten.
+
+Caracteristicas:
+1. Lenguaje de Alto nivel: no hay gestión de memoria.
+2. Interpretado y dinamico: No necesita una fase de compilación para pasar a la ejecución. Se compila en tiempo de ejecución.
+3. Debilmente tipado: una variable puede transformase en otra totalmente diferente. El tipo se define por el valor, no por la declaración
+4. Multiparadigma: Programación funcional, orientada a objetos, estructurada, etc. 
+5. Sensible a mayúsculas y minúsculas. 
+6. No requiere ; al final de cada linea. 
+*/
+
+// Contantes: UPPER_CASE
+const UNA_CONSTANTE = "Esta es una constante"
+const PI = 3.1416
+
+// Clases:  UpperCamelCase
+class SerHumano {
+   constructor(nombre, genero) {
+      this.nombre = nombre
+      this.genero = genero
+   }
+   miNombreEs() {
+      return `Mi nombre es ${this.nombre}`
+   }
+}
+
+// Objetos, primitivos, funciones, e instancias: usando lowerCamelCase
+ const unObjeto = {
+    nombre: 'Daniel',
+    email: 'dtejadah@unal.edu.co'
+ }
+
+ let unaCadena = 'Hola Mundo'
+ unNumero= 1
+ unBoolean = true
+
+ /* 
+ Ordenamiento de código
+1. Importación de modulos
+2. Declaración de variables
+3. Declaración de funciones
+4. Ejecución del código
+
+Tipos de datos
+1. Primitivos: Variable que cuand la creamos accedemos a ellas inmediatamente, como:  String, number, boolean, null, undefined, NaN.
+2. Compuestos o complejos: No accedemos al valor directamentem sino que a una referencia en donde se encuentra dicho valor. Es una especie de coordenada.
+*/
+
+// Object = {} // Colección de atributos y valores.
+// array = [] // Colección de datos
+// function () { }
+// class { }
+
+
+/*
+Extensiones utiles: 
+1. ESLint: Descripciones de errores, muy utiles
+2. Live Server: Monta un servidor en tiempo real, sin ir al navegador. 
+3. Prettier: formatear codigo
+*/
+
+/*
+Hoisting: Elevación de variables
+var variable de ambito global, scope global -> Mala práctica
+let variable de ambito de bloque
+*/
+
+// Interpolación de variables: Template string
+let nombre = "Daniel";
+let apellido = "Tejada";
+let completo = `Hola ${nombre} ${apellido}`;
+console.log(completo);
+
+// números
+let a = 2;
+let b = new Number(1); // declaración con el constructor
+let c = 7.19;
+let d = '5.6'; // No es un número, es una cadena
+
+console.log(parseFloat(d)); // imprime con 2 números decimales
+console.log(c.toFixed(2)); // imprime con 2 números decimales
+
+// null, undefined y  NaN
+// null: valor ausente o vacia (definida por el usuario)
+// undefined: para variables que no han sido inicializadas y tiene valor ausente 
+// NaN: not a number 
+let nulo = null;
+console.log(nulo); // null
+
+let indefinida; 
+console.log(indefinida); // undefined
+
+let noEsUnNumero = 'hola'*3.14;
+console.log(noEsUnNumero); // NaN
+
+

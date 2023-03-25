@@ -1,12 +1,12 @@
 const express = require("express");  // importar express
 const PORT = 3000; // definición del puerto
-const app = express(); // acá definiremos las rutas
-app.use(express.json) //¿para qué era?
+const app = express(); 
+//app.use(express.json) //¿para qué era?
 
-
+/* 
 const errorlogger = () => {};
 const errorHandler = () => {};
-
+ */
 
 let products = [
     {
@@ -45,16 +45,15 @@ app.get("/api/v1/products/:productId", (req, res) => {
     const {productId} = req.params; // Desestructuramos el objeto que trae 
     console.log(productId);
 
-    const productIdInt = parseInt(productId);
+    const productIdInt = parseInt(productId); // venía como string, cambiamos a int
     const product = products.find((product)=> product.id === productIdInt);
     res.json(product);
 });
 
-app.post('/api/v1/products',(req,res) =>{
-
+// Agregar nuevos productos
+app.post("/api/v1/products", (req, res) =>{
 });
 
-
 app.listen(PORT, () => {
-    console.log(`Escuchando en el http://localhost:${PORT}`);
+    console.log(`Escuchando en http://localhost:${PORT}`);
 });

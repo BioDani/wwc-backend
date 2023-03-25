@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"path": "clase1",
+			"problemMatcher": [],
+			"label": "npm: dev - clase1",
+			"detail": "node --watch --trace-warnings ./src/index.js  "
+		}
+	]
+}

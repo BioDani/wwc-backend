@@ -9,7 +9,7 @@ const writeHTMLResponse = (res, htmlCode) =>{
     res.setHeader("Content-type","text/html");
     res.writeHead(200);
     res.end(htmlCode);
-};
+}
 
 const server = http.createServer(
     (req, res) => {

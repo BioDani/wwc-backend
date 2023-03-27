@@ -21,6 +21,7 @@ function hablar(nombre) {
         setTimeout(() => {
             console.log(`${nombre} está diciendobla bla bla bla`);
             resolve(nombre);
+            //reject(nombre); // Esto dispararía el error. 
          }, 1000);    
     })
     
@@ -39,9 +40,10 @@ function adios(nombre) {
 
 console.log(`Iniciando proceso`);
 hola(`Daniel`)
-    .then(hablar) // No requiere parametro,es el mismo que en hola()
+    .then(hablar) // No requiere parámetro,es el mismo que en hola()
     .then(hablar)
     .then(adios)
-    .catch((err) => {
-        console.log('Hubo un error.');
+    .catch((err) => { // cualquier función que falla viene al catch
+        console.error('Hubo un error.');
+        console.error(err);
     });

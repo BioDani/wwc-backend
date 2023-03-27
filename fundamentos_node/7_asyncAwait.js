@@ -42,7 +42,7 @@ async function adios(nombre) {
 
 async function main() { // El await solo podía ser ejecutado al interior de asíncrona
     let nombre = await hola(`Daniel`);
-    await hablar(nombre);
+    await hablar(nombre); // await le dice que hay que esperar a que se ejecute hola() antes de seguir con algo más
     await hablar(nombre);
     await adios(nombre);
 }
@@ -50,7 +50,7 @@ async function main() { // El await solo podía ser ejecutado al interior de as�
 //¿Cómo saber que esta función síncrona se está ejecutando de manera asíncrona?
 console.log(`Empieza el proceso.`);
 main();
-console.log(`Termina el proceso.`);
+console.log(`Termina el proceso.`); // Va a ser la segunda intrucción que se ejecute en el proceso
 
 /*
 Está mostrando:

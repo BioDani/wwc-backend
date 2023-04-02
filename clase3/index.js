@@ -1,4 +1,4 @@
-const express = require("express");  // importar express
+const express = require('express');  // importar express
 const PORT = 3000; // definición del puerto
 const app = express(); 
 //app.use(express.json) //¿para qué era?
@@ -10,24 +10,24 @@ const errorHandler = () => {};
 
 let products = [
     {
-        id : 1, 
+        id : 1,
         name : `reloj`,
         price : 2000,
         quantity : 10
     },
     {
-        id : 2, 
+        id : 2,
         name : `reloj2`,
         price : 3000,
         quantity : 12
     },
     {
-        id : 3, 
+        id : 3,
         name : `reloj3`,
         price : 4000,
         quantity : 34
     }
-];
+  ];
 
 app.get("/", (req, res) => {
     res.send(`Primera app de express`);

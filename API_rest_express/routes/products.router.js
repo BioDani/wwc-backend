@@ -1,13 +1,10 @@
-const express = require("express"); // importo express
+const express = require("express");
 const {faker} = require('@faker-js/faker');
 
 const router = express.Router()
 
-const products2 = [
 
-];
-
-// 1. Show all products
+// 1. Get all products
 // /api/v1/products?limit=10&offset=10
 router.get('/', (req, res) =>{ // request & response
   let products = [];
@@ -17,7 +14,7 @@ router.get('/', (req, res) =>{ // request & response
   for (let index = 0; index < limit; index++) {
     products.push(
       {
-        id : index,
+        id : index +1,
         name : faker.commerce.productName(),
         quantity : faker.random.numeric(2),
         price : faker.commerce.price(),
@@ -26,14 +23,14 @@ router.get('/', (req, res) =>{ // request & response
     )
   };
 
-  res.json(products);
+  res.status(201).json(products);
 
 })
 
 // 2. Create a new product
 router.post('/', (req,res) => {
   const body = req.body;
-  res.json({
+  res.status(201).json({
     message : 'Created',
     data : body
   })
@@ -43,8 +40,8 @@ router.post('/', (req,res) => {
 router.patch('/:id', (req,res) => {
   const { id } = req.params;
   const body = req.body;
-  res.json({
-    message : `Updated partially the product id:${id}`,
+  res.status(200).json({
+    message : `The product id:${id} was partially updated`,
     data : body,
     id,
   })
@@ -54,11 +51,38 @@ router.patch('/:id', (req,res) => {
 router.put('/:id', (req,res) => {
   const { id } = req.params;
   const body = req.body;
-  res.json({
-    message : `Updated the product id:${id}`,
+  res.status(200).json({
+    message : `The product id:${id} was updated`,
     data : body,
     id,
   });
+});
+
+// 5. Delete a product
+router.delete('/:id', (req,res) => {
+  const { id } = req.params;
+
+  res.status(200).json({
+    message : `The product id:${id} was deleted`,
+    id,
+  });
+});
+
+// 6. Get a specific product
+router.get('/:id', (req, res) =>{ // request & response
+  const { id } = req.params;
+
+  if (id === '999') {
+    res.status(404).json(
+      {
+        message : `Not found`
+      });
+  } else {
+    res.status(200).json(
+      {
+        id
+      })
+  }
 });
 
 module.exports = router;

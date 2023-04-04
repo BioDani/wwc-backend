@@ -14,5 +14,5 @@ app.get('/', async(req, res) =>{ // request & response
 routerApi(app);
 
 app.listen(PORT, () =>{
-  console.log(`Server corriendo en el puerto ${PORT}`);
+  console.log(`Server running in PORT:${PORT}`);
 }); // Le indico a la app en que puerto debe escuchar.

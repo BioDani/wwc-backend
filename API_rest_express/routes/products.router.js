@@ -1,33 +1,17 @@
-const express = require("express"); // importo express
-const {faker} = require('@faker-js/faker');
-
+// Importaciones
+const express = require('express');
+const ProductsService = require('./../services/product.service');
 const router = express.Router()
 
-const products2 = [
-
-];
+//Creo una instancia del servicio: ProductsService
+const service = new ProductsService;
 
 // 1. Show all products
 // /api/v1/products?limit=10&offset=10
 router.get('/', (req, res) =>{ // request & response
-  let products = [];
-  const {size} = req.query;
-  const limit = size || 5;  // 10 by default
-
-  for (let index = 0; index < limit; index++) {
-    products.push(
-      {
-        id : index,
-        name : faker.commerce.productName(),
-        quantity : faker.random.numeric(2),
-        price : faker.commerce.price(),
-        image : faker.image.imageUrl()
-      }
-    )
-  };
-
+  const {limit} = req.query;
+  const products = service.find();
   res.json(products);
-
 })
 
 // 2. Create a new product

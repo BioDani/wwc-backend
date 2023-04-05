@@ -23,8 +23,13 @@ class ProductService {
     };
   };
 
-  create(){ // Method of the class
-
+  create(data){ // Method of the class
+    const newProduct = {
+      id : ++this.products.slice(-1)[0].id , // slice return a list
+      ...data
+    };
+    this.products.push(newProduct);
+    return newProduct;
   };
 
   find(){ // Method of the class

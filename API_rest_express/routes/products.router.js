@@ -17,10 +17,8 @@ router.get('/', (req, res) =>{ // request & response
 // 2. Create a new product
 router.post('/', (req,res) => {
   const body = req.body;
-  res.json({
-    message : 'Created',
-    data : body
-  })
+  const newProduct = service.create(body);
+  res.json(newProduct);
 });
 
 // 3. Update partially a product

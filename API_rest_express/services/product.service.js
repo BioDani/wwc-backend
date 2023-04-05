@@ -2,14 +2,14 @@ const express = require("express");
 const {faker} = require('@faker-js/faker');
 
 
-class ProductsService {
+class ProductService {
 
   constructor(){
     this.products = [];
-    this.generate(); // cada que cree una instancia del servicio, se genera.
-  }
+    this.generate(); // Each time an product service's instance is created, generate() is runned
+  };
 
-  generate(limit){  // Método de la clase
+  generate(limit){  // Method of the class
     for (let index = 0; index < (limit||10); index++) {
       this.products.push(
         {
@@ -23,25 +23,26 @@ class ProductsService {
     };
   };
 
-  create(){
+  create(){ // Method of the class
 
   };
 
-  find(){
+  find(){ // Method of the class
     return this.products;
-  };
+  }
 
-  findOne(){
+  findOne(id){ // Method of the class
+    return this.products.find(product => product.id === parseInt(id));
+  }
 
-  };
+  update(){ // Method of the class
 
-  update(){
+  }
 
-  };
+  delete(){ // Method of the class
 
-  delete(){
-
-  };
+  }
 };
 
-module.exports = ProductsService;
+// Exports
+module.exports = ProductService;

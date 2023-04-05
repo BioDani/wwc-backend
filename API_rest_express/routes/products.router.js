@@ -1,10 +1,10 @@
-// Importaciones
+// Imports
 const express = require('express');
-const ProductsService = require('./../services/product.service');
+const ProductService = require('./../services/product.service');
 const router = express.Router()
 
-//Creo una instancia del servicio: ProductsService
-const service = new ProductsService;
+//Create an instance of service: ProductsService
+const service = new ProductService;
 
 // 1. Show all products
 // /api/v1/products?limit=10&offset=10
@@ -12,7 +12,7 @@ router.get('/', (req, res) =>{ // request & response
   const {limit} = req.query;
   const products = service.find();
   res.json(products);
-})
+});
 
 // 2. Create a new product
 router.post('/', (req,res) => {
@@ -45,4 +45,12 @@ router.put('/:id', (req,res) => {
   });
 });
 
+// 5. Get a specific product
+router.get('/:id', (req, res) =>{ // request & response
+  const { id } = req.params;
+  const product = service.findOne(id);
+  res.json(product);
+});
+
+// Exports
 module.exports = router;

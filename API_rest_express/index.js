@@ -1,11 +1,11 @@
-const express = require("express"); // importo express
+// Imports
+const express = require("express");
 const routerApi = require('./routes');
 
+const app = express(); // Create application
+const PORT = 3000; // PORT where it will run
 
-const app = express(); // creo aplicacion
-const PORT = 3000; //puerto donde quiero que corra
-
-app.use(express.json()); // Uso de un middleware para recibir datos json
+app.use(express.json()); // Use of a middleware to receive data in json format
 
 app.get('/', async(req, res) =>{ // request & response
   await res.send("Server is running");
@@ -15,4 +15,4 @@ routerApi(app);
 
 app.listen(PORT, () =>{
   console.log(`Server running in PORT:${PORT}`);
-}); // Le indico a la app en que puerto debe escuchar.
+}); // Show to app in which PORT will be listening

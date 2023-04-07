@@ -35,7 +35,7 @@ router.patch('/:id', (req,res) => {
   res.json(product)
 });
 
-// 5. Update partially a product
+// 5. Update all the details of a product
 router.put('/:id', (req,res) => {
   const { id } = req.params;
   const body = req.body;

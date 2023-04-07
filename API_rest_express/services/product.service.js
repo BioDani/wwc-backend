@@ -9,7 +9,7 @@ class ProductService {
     this.generate(); // Each time an product service's instance is created, generate() is runned
   };
 
-  generate(){  // Method of the class
+  async generate(){  // Method of the class
     for (let index = 0; index < (4); index++) {
       this.products.push(
         {
@@ -23,7 +23,7 @@ class ProductService {
     };
   };
 
-  create(data){ // Method of the class
+  async create(data){ // Method of the class
     //const lastId = this.products.slice(-1)[0].id;
     const lastId = this.products[this.products.length-1].id;
     const newProduct = {
@@ -34,15 +34,15 @@ class ProductService {
     return newProduct;
   };
 
-  find(){ // Method of the class
+  async find(){ // Method of the class
     return this.products;
   }
 
-  findOne(id){ // Method of the class
+  async findOne(id){ // Method of the class
     return this.products.find(product => product.id === parseInt(id));
   }
 
-  update(id, changes){ // Method of the class
+  async update(id, changes){ // Method of the class
     const index = this.products.findIndex(product => product.id === parseInt(id));
     if (index === -1){
       throw new Error(`Product not found`);
@@ -56,7 +56,7 @@ class ProductService {
     return this.products[index];
   };
 
-  delete(id){ // Method of the class
+  async delete(id){ // Method of the class
     const index = this.products.findIndex(product => product.id === parseInt(id));
     if (index === -1){
       throw new Error(`Product not found`);

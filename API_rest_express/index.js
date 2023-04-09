@@ -1,6 +1,7 @@
 // Imports
 const express = require("express");
 const routerApi = require('./routes');
+const {logErrors,errorHandler} = require('./middlewares/error.handler');
 
 const app = express(); // Create application
 const PORT = 3000; // PORT where it will run
@@ -12,6 +13,11 @@ app.get('/', async(req, res) =>{ // request & response
 });
 
 routerApi(app);
+
+// Usign the middlewares. They always go after the routing.
+app.use(logErrors);
+app.use(errorHandler);
+
 
 app.listen(PORT, () =>{
   console.log(`Server running in PORT:${PORT}`);

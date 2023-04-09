@@ -39,6 +39,7 @@ class ProductService {
   }
 
   findOne(id){ // Method of the class
+    const total = this.getTotal();
     return this.products.find(product => product.id === parseInt(id));
   }
 

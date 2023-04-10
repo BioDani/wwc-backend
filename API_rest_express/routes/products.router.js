@@ -1,6 +1,15 @@
 // Imports
 const express = require('express');
 const ProductService = require('./../services/product.service');
+
+//Joi
+const validatorHandler = require('./../middlewares/validator.handler');
+const {
+  createProductSchema,
+  updateProductSchema,
+  getProductSchema,
+} = require('./../schemas/product.schema');
+
 const router = express.Router();
 
 //Create an instance of service: ProductsService
@@ -19,27 +28,35 @@ router.get('/', async (req, res, next) => {
 });
 
 // 2. Show a specific product
-router.get('/:id', async (req, res, next) => {
-  // request & response
-  try {
-    const { id } = req.params;
-    const product = service.findOne(id);
-    res.json(product);
-  } catch (error) {
-    next(error);
+router.get(
+  '/:id',
+  validatorHandler(getProductSchema, 'params'),
+  async (req, res, next) => {
+    // request & response
+    try {
+      const { id } = req.params;
+      const product = service.findOne(id);
+      res.json(product);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 // 3. Create a new product
-router.post('/', async (req, res, next) => {
-  try {
-    const body = req.body;
-    const newProduct = service.create(body);
-    res.json(newProduct);
-  } catch (error) {
-    next(error);
+router.post(
+  '/',
+  //validatorHandler(createProductSchema , 'body'),
+  async (req, res, next) => {
+    try {
+      const body = req.body;
+      const newProduct = service.create(body);
+      res.json(newProduct);
+    } catch (error) {
+      next(error);
+    }
   }
-});
+);
 
 // 4. Update partially a product
 router.patch('/:id', async (req, res, next) => {

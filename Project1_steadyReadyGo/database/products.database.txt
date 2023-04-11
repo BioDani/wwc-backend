@@ -1,0 +1,93 @@
+[
+  {
+    "id" : 1,
+    "title" : "iphone 14",
+    "description" : "bla bla bla bla bla 1",
+    "price" : 1000 ,
+    "discountPercentage" : 15,
+    "rating" : 4.8,
+    "stock" : 89,
+    "brand" : "apple",
+    "category" : "smartphone",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 2,
+    "title" : "samsung s22",
+    "description" : "bla bla bla bla bla 2",
+    "price" : 900,
+    "discountPercentage" : 0,
+    "rating" : 4.6,
+    "stock" : 100,
+    "brand" : "samsung",
+    "category" : "smartphone",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 3,
+    "title" : "huawei XXX",
+    "description" : "bla bla bla bla bla 3",
+    "price" : 300 ,
+    "discountPercentage" : 15,
+    "rating" : 4.8,
+    "stock" : 14,
+    "brand" : "huawei",
+    "category" : "smartphone",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 4,
+    "title" : "laptop 1",
+    "description" : "bla bla bla bla bla 4",
+    "price" : 600,
+    "discountPercentage" : 15,
+    "rating" : 4.4,
+    "stock" : 111,
+    "brand" : "apple",
+    "category" : "laptop",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 5,
+    "title" : "laptop 2",
+    "description" : "bla bla bla bla bla 5",
+    "price" : ,
+    "discountPercentage" : 30,
+    "rating" : 4.7,
+    "stock" : 1,
+    "brand" : "apple",
+    "category" : "laptop",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 6,
+    "title" : "laptop 3",
+    "description" : "bla bla bla bla bla 6",
+    "price" 400: ,
+    "discountPercentage" : 50,
+    "rating" : 3.2,
+    "stock" : 1,
+    "brand" : "asus",
+    "category" : "laptop",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  },
+  {
+    "id" : 1,
+    "title" : "macbook pro ",
+    "description" : "bla bla bla bla bla",
+    "price" : 2000,
+    "discountPercentage" : 0,
+    "rating" : 3.3,
+    "stock" : 1,
+    "brand" : "apple",
+    "category" : "laptop",
+    "images" : ["https://loremflickr.com/640/480",
+    "https://loremflickr.com/640/481"]
+  }
+]

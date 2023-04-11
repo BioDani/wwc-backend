@@ -1,0 +1,15 @@
+{
+  "name": "project1_steadyreadygo",
+  "version": "1.0.0",
+  "description": "Project from 1st module of course \"From Hero to SuperHero\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Express",
+    "nodejs"
+  ],
+  "author": "BioDani",
+  "license": "ISC"
+}

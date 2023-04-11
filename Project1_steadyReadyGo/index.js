@@ -6,7 +6,7 @@ const routerApi = require('./routes');
 const app = express(); // Create application
 const PORT = process.env.PORT || 3000;; // PORT where it will run
 
-app.use(express.json()); // Use of a middleware to receive data in json format
+app.use(express.json()); // Native middleware of express: to receive data in json format
 
 app.get('/', async(req, res) =>{ // request & response
   await res.send("Server is running");

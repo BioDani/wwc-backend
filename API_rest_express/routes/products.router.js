@@ -46,7 +46,7 @@ router.get(
 // 3. Create a new product
 router.post(
   '/',
-  //validatorHandler(createProductSchema , 'body'),
+  validatorHandler(createProductSchema , 'body'),
   async (req, res, next) => {
     try {
       const body = req.body;

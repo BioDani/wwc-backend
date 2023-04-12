@@ -10,7 +10,6 @@ class ProductService {
 
   async loadDatabase() {
     try {
-      //const database = this.database;
       const data = await fs.readFile(this.database, { encoding: 'utf8' });
       this.products = JSON.parse(data);
     } catch (error) {
@@ -33,25 +32,26 @@ class ProductService {
       const newProduct = {
         id: parseInt(lastId) + 1,
         ...data,
-      }
+      };
       this.products.push(newProduct);
 
-      if (newProduct){
+      if (newProduct) {
         //const database = this.database;
         const productsUpdated = JSON.stringify(this.products);
         fs.writeFile(this.database, productsUpdated);
         return newProduct;
-      }else{
-        throw new error;
+      } else {
+        throw new error();
       }
-
     } catch (error) {
       console.error(error.message);
     }
   }
 
   update(id, changes) {
-    const index = this.products.findIndex((product) => product.id === parseInt(id));
+    const index = this.products.findIndex(
+      (product) => product.id === parseInt(id)
+    );
 
     if (!index) {
       console.log(`Product not found.`);
@@ -64,27 +64,26 @@ class ProductService {
 
       const productsUpdated = JSON.stringify(this.products);
       fs.writeFile(this.database, productsUpdated);
-
     }
     return this.products[index];
   }
 
   delete(id) {
-    const index = this.products.findIndex((product) => product.id === parseInt(id));
+    const index = this.products.findIndex(
+      (product) => product.id === parseInt(id)
+    );
 
     if (!index) {
       console.log(`Product not found.`);
     } else {
-      const deletedProduct = this.products[index]
+      const deletedProduct = this.products[index];
       this.products.splice(index, 1);
-
 
       const productsUpdated = JSON.stringify(this.products);
       fs.writeFile(this.database, productsUpdated);
       return deletedProduct;
-
     }
   }
-};
+}
 
 module.exports = ProductService;

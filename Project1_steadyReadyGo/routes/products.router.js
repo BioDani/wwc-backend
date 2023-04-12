@@ -1,38 +1,38 @@
 const express = require('express');
-
 const router = express.Router();
+const ProductService = require('../services/product.services');
 
+const service = new ProductService; // create an instance of ProductService
+
+// 1. Get all products
 router.get('/', async (req, res, next) => {
   // request & response
   try {
-    const products = {
-      id: 1,
-      title: 'macbook pro ',
-      description: 'bla bla bla bla bla',
-      price: 2000,
-      discountPercentage: 0,
-      rating: 3.3,
-      stock: 1,
-      brand: 'apple',
-      category: 'laptop',
-      images: [
-        'https://loremflickr.com/640/480',
-        'https://loremflickr.com/640/481',
-      ],
-    };
+    const products = service.findAll();
     res.json(products);
   } catch (error) {
     next(error);
   }
 });
 
+// 2. Get a product
+router.get('/:id',  async (req, res, next) => {
+    // request & response
+    try {
+      const { id } = req.params;
+      const product = service.findOne(id);
+      res.json(product);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 router.post('/', async (req, res, next) => {
   try {
     const body = req.body;
-    res.json({
-      message: 'created',
-      data: body,
-    });
+    const newProduct = service.create(body);
+    res.json(newProduct);
   } catch (error) {
     next(error);
   }
@@ -42,11 +42,8 @@ router.put('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
     const body = req.body;
-    res.json({
-      message: 'updated',
-      data: body,
-      id
-    });
+    const product = service.update(id, body);
+    res.json(product);
   } catch (error) {
     next(error);
   }
@@ -56,11 +53,8 @@ router.patch('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
     const body = req.body;
-    res.json({
-      message: 'updated',
-      data: body,
-      id
-    });
+    const product = service.update(id, body);
+    res.json(product);
   } catch (error) {
     next(error);
   }
@@ -69,10 +63,8 @@ router.patch('/:id', async(req, res, next)=>{
 router.delete('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
-    res.json({
-      message: 'deleted',
-      id
-    });
+    const deletedProduct = service.delete(id);
+    res.json(deletedProduct);
   } catch (error) {
     next(error);
   }

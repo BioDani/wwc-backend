@@ -17,15 +17,15 @@ class ProductService {
     }
   }
 
-  findAll() {
+  async findAll() {
     return this.products;
   }
 
-  findOne(id) {
+  async findOne(id) {
     return this.products.find((product) => product.id === parseInt(id));
   }
 
-  create(data) {
+  async create(data) {
     try {
       // Push to list
       const lastId = this.products.slice(-1)[0].id;
@@ -48,7 +48,7 @@ class ProductService {
     }
   }
 
-  update(id, changes) {
+  async update(id, changes) {
     const index = this.products.findIndex(
       (product) => product.id === parseInt(id)
     );
@@ -68,7 +68,7 @@ class ProductService {
     return this.products[index];
   }
 
-  delete(id) {
+  async delete(id) {
     const index = this.products.findIndex(
       (product) => product.id === parseInt(id)
     );

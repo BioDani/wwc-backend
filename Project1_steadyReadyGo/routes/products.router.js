@@ -8,7 +8,7 @@ const service = new ProductService; // create an instance of ProductService
 router.get('/', async (req, res, next) => {
   // request & response
   try {
-    const products = service.findAll();
+    const products = await service.findAll();
     res.json(products);
   } catch (error) {
     next(error);
@@ -20,7 +20,7 @@ router.get('/:id',  async (req, res, next) => {
     // request & response
     try {
       const { id } = req.params;
-      const product = service.findOne(id);
+      const product = await service.findOne(id);
       res.json(product);
     } catch (error) {
       next(error);
@@ -31,7 +31,7 @@ router.get('/:id',  async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const body = req.body;
-    const newProduct = service.create(body);
+    const newProduct = await service.create(body);
     res.json(newProduct);
   } catch (error) {
     next(error);
@@ -42,7 +42,7 @@ router.put('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
     const body = req.body;
-    const product = service.update(id, body);
+    const product = await service.update(id, body);
     res.json(product);
   } catch (error) {
     next(error);
@@ -53,7 +53,7 @@ router.patch('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
     const body = req.body;
-    const product = service.update(id, body);
+    const product = await service.update(id, body);
     res.json(product);
   } catch (error) {
     next(error);
@@ -63,7 +63,7 @@ router.patch('/:id', async(req, res, next)=>{
 router.delete('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
-    const deletedProduct = service.delete(id);
+    const deletedProduct = await service.delete(id);
     res.json(deletedProduct);
   } catch (error) {
     next(error);

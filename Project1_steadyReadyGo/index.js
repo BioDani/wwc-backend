@@ -19,7 +19,8 @@ routerApi(app);
 
 // Put the middlewares in exucution order
 app.use(logErrors); // (1st)
-app.use(errorHandler); // (2nd)
+app.use(boomErrorHandler); // (2nd)
+app.use(errorHandler); // (3rd)
 
 
 

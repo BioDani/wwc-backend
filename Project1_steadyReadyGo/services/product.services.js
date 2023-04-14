@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs/promises');
+const boom = require('@hapi/boom');
 
 class ProductService {
   constructor() {
@@ -22,7 +23,13 @@ class ProductService {
   }
 
   async findOne(id) {
-    return this.products.find((product) => product.id === parseInt(id));
+    const product =  this.products.find((product) => product.id === parseInt(id));
+
+    if (!product){
+      throw boom.notFound(`Product with id=[${id}] not found in the DB.`);
+    }else{
+      return product;
+    }
   }
 
   async create(data) {
@@ -54,7 +61,7 @@ class ProductService {
     );
 
     if (!index) {
-      console.log(`Product not found.`);
+      throw boom.notFound(`Product with id=[${id}] not found in the DB.`);
     } else {
       const product = this.products[index];
       this.products[index] = {
@@ -74,7 +81,7 @@ class ProductService {
     );
 
     if (!index) {
-      console.log(`Product not found.`);
+      throw boom.notFound(`Product with id=[${id}] not found in the DB.`);
     } else {
       const deletedProduct = this.products[index];
       this.products.splice(index, 1);

@@ -95,7 +95,8 @@ router.delete(
     try {
       const { id } = req.params;
       const deletedProduct = await service.delete(id);
-      res.json(deletedProduct);
+      res.json({ message : `The product '${deletedProduct.title}' was deleted.`,
+        deletedProduct});
     } catch (error) {
       next(error);
     }

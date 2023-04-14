@@ -12,7 +12,7 @@ const category = Joi.string().alphanum();
 const images = Joi.string().alphanum();
 
 const findOneSchema = Joi.object({
-  id: id.required(),
+  id: id.required()
 });
 
 const updatePropertySchema = Joi.object({
@@ -25,7 +25,7 @@ const updatePropertySchema = Joi.object({
   stock: stock.optional(),
   brand: brand.optional(),
   category: category.optional(),
-  images: images.optional(),
+  images: images.optional()
 });
 
 const updateTotallySchema = Joi.object({
@@ -38,7 +38,7 @@ const updateTotallySchema = Joi.object({
   stock: stock.required(),
   brand: brand.required(),
   category: category.required(),
-  images: images.required(),
+  images: images.required()
 });
 
 const createSchema = Joi.object({
@@ -51,7 +51,7 @@ const createSchema = Joi.object({
   stock: stock.required(),
   brand: brand.required(),
   category: category.required(),
-  images: images.required(),
+  images: images.required()
 });
 
 const deleteSchema = Joi.object({
@@ -63,5 +63,5 @@ module.exports = {
   updatePropertySchema,
   updateTotallySchema,
   createSchema,
-  deleteSchema,
+  deleteSchema
 };

@@ -109,7 +109,11 @@ Run the project
 #### Update a product
 
 ```http
-  POST /api/v1/products/{id}
+  PUT /api/v1/products/{id}
+```
+
+```http
+  PATCH /api/v1/products/{id}
 ```
 
 | Parameter | Type     | Description                       |
@@ -129,7 +133,7 @@ Run the project
 #### Delete a specific product
 
 ```http
-  GET /api/v1/products/${id}
+  DELETE /api/v1/products/${id}
 ```
 
 | Parameter | Type     | Description                       |

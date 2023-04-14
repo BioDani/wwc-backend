@@ -4,13 +4,13 @@
 
 # 🏁  Steady, Ready, Go
 
-"Steady, ready, go" is the first module of The course "From hero to Superhero Backend node js" taugh by Women Who Code Medellin and its parther and sponsor Softserve. 
+"*Steady, ready, go*" is the first module of The course "From hero to Superhero Backend node js" taugh by Women ***Who Code Medellin*** and its parther and sponsor ***Softserve***. 
 
 
 ## 🚀 About Me
 
 
-Hello, I am Dani, a biological engineer and enthusiast learner of backend, frontend, and data science. I would like to learn many things and be part of significant projects around the tech area, working with kind, smart and open-minded people. That is the goal! 
+Hello, I am ***Dani Tejada***, a biological engineer and enthusiast learner of backend, frontend, and data science. I would like to learn many things and be part of significant projects around the tech area, working with kind, smart and open-minded people. That is the goal! 
 
 ## 🤝 Connect with me:
 
@@ -23,11 +23,12 @@ Hello, I am Dani, a biological engineer and enthusiast learner of backend, front
 
 The objective of this project is the backend development of a virtual store dedicated to technology devices such as laptops, cell phones, TVs, among others. For it :
 
-  1. Services were built to make a CRUD of products.
-  2. The persistence of the data was carried out in a .txt file that acts as a database, which is constantly updated.
+  1. Services were built to make a **CRUD** of products.
+  2. The **persistence** of the data was carried out in a **.txt** file that acts as a database, which is constantly updated.
 
 
 ## 🛠️ Installation
+
 Clone repository
 ```bash
   git clone BioDani/wwc-backend 

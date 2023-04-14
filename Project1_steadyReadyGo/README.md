@@ -1,5 +1,9 @@
 ![Logo](https://www.womenwhocode.com/assets/WWCode_Progress_Pride_Logo_Black-8640a72547cacc4a741d6d242e84cd3fcf5f9bf97a13644e11d21e831b82a327.png#center)
 
+<p align="center">
+  <img width="460" height="300" src="https://picsum.photos/460/300">
+</p>
+
 # Steady, Ready, Go
 
 "Steady, ready, go" is the first module of The course "From hero to Superhero Backend node js" taugh by Women Who Code Medellin and its parther and sponsor Softserve. 

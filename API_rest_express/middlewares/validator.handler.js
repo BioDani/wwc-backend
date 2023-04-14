@@ -14,9 +14,9 @@ function validatorHandler(schema, property) {
     const { error } = schema.validate(data, { abortEarly: false });
     if (error) {
       next(boom.badRequest(error));
-    }
+    } else {
     next();
+    }
   };
 }
 module.exports = validatorHandler;
-

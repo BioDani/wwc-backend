@@ -135,3 +135,16 @@ Run the project
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `number` | **Required**. Product Id( int number)|
+
+
+## 🤯 References
+
+1. Transform a CSV file to JSON file: [Link](https://csvjson.com/csv2json)
+
+2. HTTP-friendly error objects: [Documentation](https://hapi.dev/module/boom/)
+
+3. Schema description language and data validator for JavaScript: [Documentation](https://joi.dev/api/?v=17.9.1)
+
+3. Markup language - Markdown: [Documentation 1](https://www.markdownguide.org) - [Documentation 2](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/tutorial-de-markdown/) - [Documentation 3](https://platzi.com/tutoriales/1650-prework/5836-guia-de-uso-de-markdown-herramienta-de-conversion-de-texto-a-html/)
+
+4. Create useful .gitignore files for your project: [Link](https://www.toptal.com/developers/gitignore/)

@@ -15,7 +15,7 @@ Hello, I am Dani, a biological engineer and enthusiast learner of backend, front
 - [@BioDani](https://www.github.com/BioDani)
 - [@Dtejadah](https://www.linkedin.com/in/dtejadah) 
 
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />                   | `https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white`    
+<img src="https://edent.github.io/SuperTinyIcons/images/svg/linkedin.svg" width="100" title="LinkedIn">
 
 ## Roadmap
 

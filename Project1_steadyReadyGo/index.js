@@ -1,6 +1,8 @@
 // Imports
 const express = require("express");
 const routerApi = require('./routes');
+const {logErrors,errorHandler,boomErrorHandler} = require('./middlewares/error.handler')
+
 
 
 const app = express(); // Create application
@@ -13,6 +15,12 @@ app.get('/', async(req, res) =>{ // request & response
 });
 
 routerApi(app);
+// Middlewares always goes after the routing
+
+// Put the middlewares in exucution order
+app.use(logErrors); // (1st)
+app.use(errorHandler); // (2nd)
+
 
 
 app.listen(PORT, () =>{

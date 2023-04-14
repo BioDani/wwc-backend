@@ -15,6 +15,7 @@ Hello, I am Dani, a biological engineer and enthusiast learner of backend, front
 <a href="https://www.linkedin.com/in/dtejadah"><img align="left" src="https://raw.githubusercontent.com/yushi1007/yushi1007/main/images/linkedin.svg" alt="Dani Tejada | LinkedIn" width="21px"/></a>
 <a href="https://instagram.com/yonosoyrafael"><img align="left" src="https://raw.githubusercontent.com/yushi1007/yushi1007/main/images/instagram.svg" alt="Yu Shi | Instagram" width="21px"/></a>
 
+
 ## 👨🏻‍💻 Documentation
 
 The objective of this project is the backend development of a virtual store dedicated to technology devices such as laptops, cell phones, TVs, among others. For it :

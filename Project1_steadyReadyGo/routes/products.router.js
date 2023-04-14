@@ -1,12 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const ProductService = require('../services/product.services');
+const ProductService = require('./../services/product.services');
+
+
+const validatorHandler = require('./../middlewares/validator.handler');
+const { findOneSchema,updatePropertySchema,updateTotallySchema,createSchema,deleteSchema } = require('./../middlewares/validator.handler');
+
 
 const service = new ProductService; // create an instance of ProductService
 
 // 1. Get all products
 router.get('/', async (req, res, next) => {
-  // request & response
   try {
     const products = await service.findAll();
     res.json(products);
@@ -17,7 +21,6 @@ router.get('/', async (req, res, next) => {
 
 // 2. Get a product
 router.get('/:id',  async (req, res, next) => {
-    // request & response
     try {
       const { id } = req.params;
       const product = await service.findOne(id);
@@ -28,6 +31,7 @@ router.get('/:id',  async (req, res, next) => {
   }
 );
 
+// 3. Create a product
 router.post('/', async (req, res, next) => {
   try {
     const body = req.body;
@@ -38,6 +42,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+// 4. Update totally a product
 router.put('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
@@ -49,6 +54,7 @@ router.put('/:id', async(req, res, next)=>{
   }
 });
 
+// 5. Update a product's property
 router.patch('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;
@@ -60,6 +66,7 @@ router.patch('/:id', async(req, res, next)=>{
   }
 });
 
+// 6. Delete a product
 router.delete('/:id', async(req, res, next)=>{
   try {
     const { id } = req.params;

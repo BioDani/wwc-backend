@@ -4,7 +4,7 @@
 
 # 🏁  Steady, Ready, Go
 
-"*Steady, ready, go*" is the first module of The course "From hero to Superhero Backend node js" taugh by Women ***Who Code Medellin*** and its parther and sponsor ***Softserve***. 
+"*Steady, ready, go*" is the first module of The course _"From hero to Superhero Backend node js"_ taugh by Women ***Who Code Medellin*** and its parther and sponsor ***Softserve***. 
 
 
 ## 🚀 About Me

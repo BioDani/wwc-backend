@@ -1,4 +1,3 @@
-
 function logErrors(err, req, res, next) {
   //Capture and show errors in console
   console.log(err);

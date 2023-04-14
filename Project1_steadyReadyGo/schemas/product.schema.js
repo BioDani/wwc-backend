@@ -3,14 +3,13 @@ const Joi = require('joi');
 const id = Joi.number().integer().positive();
 const title = Joi.string().alphanum();
 const description = Joi.string().alphanum();
-const price = Joi.number().min(0); ;
+const price = Joi.number().min(0);
 const discountPercentage = Joi.number().min(0).max(100);
 const rating = Joi.number().min(0).max(5);
 const stock = Joi.number().integer().min(0);
 const brand = Joi.string().alphanum();
 const category = Joi.string().alphanum();
 const images = Joi.string().alphanum();
-
 
 const findOneSchema = Joi.object({
   id: id.required(),
@@ -40,7 +39,6 @@ const updateTotallySchema = Joi.object({
   brand: brand.required(),
   category: category.required(),
   images: images.required(),
-
 });
 
 const createSchema = Joi.object({
@@ -65,5 +63,5 @@ module.exports = {
   updatePropertySchema,
   updateTotallySchema,
   createSchema,
-  deleteSchema
+  deleteSchema,
 };

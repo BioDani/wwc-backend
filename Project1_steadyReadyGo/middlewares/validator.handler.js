@@ -8,16 +8,16 @@ function validatorHandler(schema, property) {
   And then it return a middleware
   */
 
-  return (req, res, next) =>{
+  return (req, res, next) => {
     const data = res[property]; // Condition for a dinamic middleware
-    const {error} = schema.validate();
+    const { error } = schema.validate(data, { abortEarly: false });
 
-    if (error){
+    if (error) {
       next(boom.badRequest(error));
-    }else{
+    } else {
       next();
     }
-  }
+  };
 }
 
 module.exports = validatorHandler;

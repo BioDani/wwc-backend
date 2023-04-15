@@ -17,7 +17,7 @@ function validatorHandler(schema, property) {
     } else {
       next();
     }
-  };
+  }
 }
 
 module.exports = validatorHandler;

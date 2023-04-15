@@ -60,7 +60,7 @@ class ProductService {
       (product) => product.id === parseInt(id)
     );
 
-    if (!index) {
+    if (index===-1) {
       throw boom.notFound(`Product with id=[${id}] not found in the DB.`);
     } else {
       const product = this.products[index];

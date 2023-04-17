@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs/promises');
 const boom = require('@hapi/boom');
+const { array } = require('joi');
 
 class ProductService {
   constructor() {

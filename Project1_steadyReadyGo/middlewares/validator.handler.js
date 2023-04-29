@@ -9,7 +9,7 @@ function validatorHandler(schema, property) {
   */
 
   return (req, res, next) => {
-    const data = res[property]; // Condition for a dinamic middleware
+    const data = req[property]; // Condition for a dinamic middleware
     const { error } = schema.validate(data, { abortEarly: false });
 
     if (error) {
@@ -17,7 +17,7 @@ function validatorHandler(schema, property) {
     } else {
       next();
     }
-  };
+  }
 }
 
 module.exports = validatorHandler;

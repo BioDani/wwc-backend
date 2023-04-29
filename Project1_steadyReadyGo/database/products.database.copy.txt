@@ -166,29 +166,5 @@
     "brand": "Samsung",
     "category": "Weareble",
     "images": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464608_sd.jpg;maxHeight=640;maxWidth=550"
-  },
-  {
-    "id": 15,
-    "title": "Samsung - Galaxy Watch4 Classic Stainless Steel Smartwatch 46mm BT - NEWWW",
-    "description": "Samsung - Galaxy Watch4 Classic Stainless Steel Smartwatch 46mm BT - Black black",
-    "price": 299.99,
-    "discountPercentage": 40,
-    "rating": 4.6,
-    "stock": 1181,
-    "brand": "Samsung",
-    "category": "Weareble",
-    "images": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464608_sd.jpg;maxHeight=640;maxWidth=550"
-  },
-  {
-    "id": 15,
-    "title": "Samsung - Galaxy Watch4 Classic Stainless Steel Smartwatch 46mm BT - NEWWW",
-    "description": "Samsung - Galaxy Watch4 Classic Stainless Steel Smartwatch 46mm BT - Black black",
-    "price": 299.99,
-    "discountPercentage": 40,
-    "rating": 4.6,
-    "stock": 1181,
-    "brand": "Samsung",
-    "category": "Weareble",
-    "images": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6464/6464608_sd.jpg;maxHeight=640;maxWidth=550"
   }
 ]

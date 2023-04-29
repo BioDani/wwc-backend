@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const ProductService = require('./../services/product.services');
 
 const validatorHandler = require('./../middlewares/validator.handler');
@@ -41,7 +42,7 @@ router.get(
 // 3. Create a product
 router.post(
   '/',
-  validatorHandler(createSchema, 'body'),
+  //validatorHandler(createSchema, 'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -56,7 +57,7 @@ router.post(
 // 4. Update totally a product
 router.put(
   '/:id',
-  validatorHandler(updateTotallySchema, 'params'),
+  //validatorHandler(updateTotallySchema, 'params'),
   validatorHandler(updateTotallySchema, 'body'),
   async (req, res, next) => {
     try {
@@ -74,7 +75,7 @@ router.put(
 router.patch(
   '/:id',
   validatorHandler(updatePropertySchema, 'params'),
-  validatorHandler(updatePropertySchema, 'body'),
+  //validatorHandler(updatePropertySchema, 'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;

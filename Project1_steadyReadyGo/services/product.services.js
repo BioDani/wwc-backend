@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs/promises');
 const boom = require('@hapi/boom');
+const { array } = require('joi');
 
 class ProductService {
   constructor() {
@@ -60,7 +61,7 @@ class ProductService {
       (product) => product.id === parseInt(id)
     );
 
-    if (!index) {
+    if (index===-1) {
       throw boom.notFound(`Product with id=[${id}] not found in the DB.`);
     } else {
       const product = this.products[index];

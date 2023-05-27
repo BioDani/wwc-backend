@@ -108,3 +108,52 @@ Elimina un registro de la tabla `productos`:
 DELETE FROM productos
 WHERE id = 2;
 ```
+
+**Query #1**
+
+    SELECT *
+    FROM products p
+    ORDER BY price ASC;
+
+| id  | name       | description                | price | stock |
+| --- | ---------- | -------------------------- | ----- | ----- |
+| 3   | Producto 3 | Descripción del producto 3 | 5.99  | 200   |
+| 5   | Producto 5 | Descripción del producto 3 | 5.99  | 180   |
+| 1   | Producto 1 | Descripción del producto 1 | 10.99 | 100   |
+| 4   | Producto 4 | Descripción del producto 4 | 11.99 | 300   |
+| 6   | Producto 6 | Descripción del producto 4 | 11.99 | 200   |
+| 2   | Producto 2 | Descripción del producto 2 | 19.99 | 50    |
+
+---
+**Query #2**
+
+    SELECT *
+    FROM products p
+    ORDER BY price,stock ASC;
+
+| id  | name       | description                | price | stock |
+| --- | ---------- | -------------------------- | ----- | ----- |
+| 5   | Producto 5 | Descripción del producto 3 | 5.99  | 180   |
+| 3   | Producto 3 | Descripción del producto 3 | 5.99  | 200   |
+| 1   | Producto 1 | Descripción del producto 1 | 10.99 | 100   |
+| 6   | Producto 6 | Descripción del producto 4 | 11.99 | 200   |
+| 4   | Producto 4 | Descripción del producto 4 | 11.99 | 300   |
+| 2   | Producto 2 | Descripción del producto 2 | 19.99 | 50    |
+
+---
+**Query #3**
+
+    SELECT *
+    FROM products p
+    WHERE stock > 100 AND price > 10
+    ORDER BY price ASC
+    OFFSET 1
+    LIMIT 2;
+
+| id  | name       | description                | price | stock |
+| --- | ---------- | -------------------------- | ----- | ----- |
+| 6   | Producto 6 | Descripción del producto 4 | 11.99 | 200   |
+
+---
+
+[View on DB Fiddle](https://www.db-fiddle.com/)

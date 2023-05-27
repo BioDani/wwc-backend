@@ -24,6 +24,8 @@
 
 **Query #1**
 
+List all products
+
     SELECT * 
     FROM products as p;
 
@@ -37,6 +39,8 @@
 ---
 **Query #2**
 
+List all the columns for the product with id:1 
+
     SELECT * 
     FROM products as p
     WHERE p.id = 1;
@@ -47,6 +51,8 @@
 
 ---
 **Query #3**
+
+Show the name of the product id is 1
 
     SELECT p.name
     FROM products as p
@@ -59,6 +65,7 @@
 ---
 **Query #4**
 
+Delete the product when 
     DELETE FROM products
     WHERE id = 4;
 
